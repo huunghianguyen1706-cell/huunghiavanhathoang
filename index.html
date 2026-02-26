@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NHÓM 2 CHÀNG GOAT</title>
+</head>
+
+
+  <style>
+    *{ box-sizing: border-box; }
+
+
+    
+    /* KHỐI BAO */
+    .init{
+      margin: 24px auto;
+      padding: 22px;
+      background-color: ##FFCCFF;
+      border-radius: 20px;
+      font-family: 'Segoe UI', 'Poppins', sans-serif;
+      font-size: 18px;
+      box-shadow: 0 10px 30px rgba(163, 148, 224, 0.25);
+      max-width: 1200px;
+    }
+
+    /* HEADER */
+    .header{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: linear-gradient(135deg, #FFF0F5, #9ecbff);
+      border-radius: 24px;
+      color: white;
+    }
+
+    .logo img{
+      max-height: 110px;
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,.65);
+      background: white;
+    }
+
+    .title{
+      flex: 1;
+      text-align: center;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      padding-right: 10px;
+    }
+
+    .title h1{
+      margin: 0;
+      color: #FFF0F5;
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .title p{
+      margin: 10px 0 0;
+      font-weight: 600;
+      opacity: .95;
+    }
+
+    /* MENU */
+    nav{
+      background: linear-gradient(90deg, #FFF0F5, #c7b7f2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 999px;
+      margin: 26px auto;
+      max-width: 1100px;
+      box-shadow: 0 8px 20px rgba(145, 145, 218, 0.3);
+      flex-wrap: wrap;
+    }
+
+    nav a, .dropbtn{
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 999px;
+      transition: 0.3s;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 16px;
+    }
+
+    nav a:hover, .dropbtn:hover{
+      background-color: rgba(255,255,255,0.35);
+      color: #374151;
+    }
+
+    /* DROPDOWN */
+    .dropdown{
+      position: relative;
+    }
+
+    .dropdown-content{
+      display: none;
+      position: absolute;
+      top: 48px;
+      left: 0;
+      background-color: #ffffff;
+      min-width: 220px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      overflow: hidden;
+      z-index: 20;
+      padding: 8px;
+    }
+
+    .dropdown-content a{
+      color: #4b5563;
+      padding: 12px 14px;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .dropdown-content a:hover{
+      background-color: #f7ecfa;
+      color: #a855f7;
+    }
+
+    .dropdown:hover .dropdown-content{
+      display: block;
+    }
+
+    /* MAIN */
+    .main{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      padding: 10px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* BOX */
+    .box{
+      flex: 1 1 calc(50% - 28px);
+      background-color: #ffffff;
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 10px 25px rgba(200,190,240,0.25);
+    }
+
+    /* TIÊU ĐỀ TRONG BOX */
+    .box h2{
+      color: #7c6ee6;
+      font-size: 26px;
+      margin: 0 0 12px 0;
+      font-weight: 800;
+    }
+
+    /* MEDIA */
+    img, video, audio{
+      border-radius: 16px;
+      margin-top: 10px;
+      max-width: 100%;
+    }
+
+    table{ width: 100%; border-collapse: collapse; }
+
+    /* TAG NHẤN */
+    .tag{
+      display: inline-block;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #fff5f5;
+      border: 1px solid rgba(255,0,0,.15);
+      margin-top: 8px;
+    }
+
+    /* FORM */
+    input, textarea{
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid #c7b7f2;
+      padding: 12px;
+      font-size: 16px;
+      margin-top: 6px;
+      outline: none;
+    }
+    textarea{ min-height: 120px; }
+
+    .btn-row{
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    button, input[type="reset"]{
+      background: linear-gradient(135deg, #f7b2c4, #eee0e5);
+      color: white;
+      border: none;
+      padding: 10px 28px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover, input[type="reset"]:hover{
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(200,150,220,0.5);
+    }
+
+    input[type="reset"]{
+      background: linear-gradient(135deg, #f7b2c4, #eee0e5);
+    }
+
+    /* FOOTER */
+    .footer{
+      background: linear-gradient(135deg, #f7b2c4, #eee0e5);
+      color: white;
+      text-align: center;
+      font-size: 15px;
+      border-radius: 24px;
+    }
+    .footer div{ margin: 6px 0; }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .box{ flex: 1 1 100%; }
+      .title h1{ font-size: 26px; }
+      .logo img{ width: 95px; height: 95px; }
+    }
+    .countdown-bar{
+  width: 100%;
+  max-width: 1100px;          /* tránh bự quá */
+  margin: 18px auto;          /* canh giữa */
+  padding: 14px 18px;
+  background: #f3f4f6;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(145,145,218,0.18);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+  overflow: hidden;           /* tránh tràn cắt chữ lung tung */
+}
+
+.countdown-title{
+  font-weight: 900;
+  color: #7c6ee6;
+  font-size: 20px;
+  line-height: 1.2;
+
+  flex: 1;                    /* cho title chiếm phần còn lại */
+  min-width: 220px;           /* không bị bóp quá */
+}
+
+.countdown-timer{
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+
+  flex-shrink: 0;             /* không cho timer bị bóp */
+  font-variant-numeric: tabular-nums;
+}
+
+.cd-part{ display:flex; align-items:baseline; gap:6px; }
+
+.cd-num{
+  font-size: 28px;
+  font-weight: 900;
+  color: #111827;
+  line-height: 1;
+}
+
+.cd-unit{
+  font-size: 14px;
+  font-weight: 800;
+  color: #6b7280;
+}
+
+/* Màn nhỏ: cho xuống dòng đẹp */
+@media (max-width: 900px){
+  .countdown-bar{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .countdown-title{ min-width: 0; }
+  .countdown-timer{ flex-wrap: wrap; justify-content: center; }
+}
+
+  </style>
+
+<body>
+
+<div class="init header">
+  <div class="logo">
+    <img src="112.jpg" alt="Err">
+  </div>
+  <div class="title">
+   <h1>GOAT VÀ PHÓ GOAT</h1> 
+  </div>
+</div>
+
+    
+<!-- Thanh menu -->
+    <nav>
+        
+        
+      
+        <!-- Menu Dịch vụ có menu con -->
+        <div class="dropdown">
+            <button class="dropbtn">Các chủ đề</button>
+            <div class="dropdown-content">
+                <a href="#sub1"> Thơ </a>
+                <a href="#sub2"> Ảnh </a>
+                <a href="#sub3"> Nhạc </a>
+                <a href="#sub3"> Video </a>
+            </div>
+        </div>
+        
+        <a href='file:///C:/123/thanhvien.html' target='_blank'>Thành viên nhóm</a>
+        <a href="https://ngoccs.edu.vn" target="_blank">GV hướng dẫn</a>
+    </nav>
+
+        
+    <div class="main">
+    
+        <div class="box">
+            <h1> Bài thơ: "LÀM SAO ĐỂ CÓ CÚP VÀNG NHƯ SI?" </h1>
+            <table>
+            <tr style="font-style: italic;"> <td width="300">    
+            <p>Đêm về ngồi ngắm trời sao,</p>
+<p>Anh Liêm than thở, lòng đau nghẹn ngào.</p>
+<p>Messi nâng cúp ngọt ngào,</p>
+<p>Làm sao chịu nổi, biết bao hậm hừ.</p>
+<p>Nghiêng đầu anh ngẫm suy tư,</p>
+<p>"Ta đây tài giỏi, dư thừa hơn ai.</p>
+<p>Cớ sao cúp cứ mãi trôi,</p>
+<p>Messi lại nhặt, ôi thôi bẽ bàng."</p>
+<p>Gương soi, anh nói vẻ sang:</p>
+<p>"Đẹp trai, phong độ, ai mà sánh ngang?</p>
+<p>Mỗi tội cay cú ngang tàng</p>
+<p>Cúp vàng chẳng đến, trái ngang lòng này!"</p>
+<p>Tự an: "Chắc tại vận may,</p>
+<p>Ba lần tệ nhất đội hình FIFA</p>
+<p>Nhìn qua Messi hoan ca,</p>
+<p>Rô đây chỉ biết thở ra bùi ngùi.</p>
+<p>Cay thì cay, cười thì cười,</p>
+<p>Đời ai cũng có đôi lời để than.</p>
+<p>Anh Liêm mỏ hỗn la làng</p>
+<p>"LÀM SAO ĐỂ CÓ CÚP VÀNG NHƯ SI?"</p>
+            </td>
+            <td>
+                <img src="CR7.jpg" alt="Err" style="width: 90%; height: auto;">
+            </td>
+        </tr>
+    </table>
+            <p style="color: red;"> <em> Tác giả: Đội trưởng pressing ricon </em>
+        </div>
+        <div class="box">
+            <h1> KIM RI CHA VÀ "VÕ SĨ CHI LÊ" </h1>
+        <img src="KIMRICHA.jpg" alt="Err" style="width: 30%; height: auto;">   
+        <img src="MESSI.jpg" alt="Err" style="width: 30%; height: auto;">
+           
+        </div>
+        <div class="box">
+            <h1> ÂM NHẠC </h1>
+            <audio src="tải xuống.mp4" type="audio/mpeg" controls>
+                Trình duyệt của bạn không hỗ trợ thẻ audio.
+            </audio>
+        </div>
+        <div class="box">
+            <h1>VIDEO "TỔNG HỢP THẾ VÕ CỦA 2 GOAT"</h1>
+            <video src="tonghopthevo.mp4" style="width: 50%; height: auto;" controls>
+                Trình duyệt của bạn không hỗ trợ thẻ audio.
+            </video>
+        </div>
+    
+
+    </div>
+       
+    <div class="init" id="contact" style="background-color:lightskyblue; box-shadow: 0 0 8px;">
+    <h2 style="color:#374151; margin: 0 0 10px;">ĐÓNG GÓP Ý KIẾN</h2>
+
+    <form action="https://ngoccs.edu.vn" method="POST" target="_blank">
+      <p>Họ và tên:</p>
+      <input type="text" name="fullname" placeholder="Nhập họ và tên">
+
+      <p>Email:</p>
+      <input type="email" name="email" placeholder="Nhập email">
+
+      <p>Bình luận:</p>
+      <textarea name="comment" placeholder="Viết góp ý của bạn..."></textarea>
+
+      <div class="btn-row">
+        <button type="submit">Gửi</button>
+        <input type="reset" value="Nhập lại">
+      </div>
+    </form>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="init footer">
+    <div style="color: red;">©️ NHÓM/TÁC GIẢ: Nguyễn Hữu Nghĩa / Nguyễn Trần Nhật Hoàng</div>
+    <div style="color: blue;">📧 Địa chỉ: Lớp 12A1 - THPT NBK - Gia Lai</div>
+  </div>
+</body>
+</html>
